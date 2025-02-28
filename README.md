@@ -33,6 +33,7 @@ This guide provides detailed instructions for building custom Android ROMs (spec
 **Note**: A full build typically takes 2-4 hours depending on your hardware.
 
 ## Phase 1: Environment Setup
+Check this link for further guide on environment setup: [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build/).
 
 ### 1. Update System Packages
 ```bash
