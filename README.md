@@ -42,7 +42,7 @@ sudo apt update && sudo apt upgrade -y
 
 ### 2. Install Required Packages
 ```bash
-sudo apt-get install git-core gnupg rsync flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+sudo apt-get install git-core gnupg rsync flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 ccache x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
 ```
 
 ### 3. Setup SSH Keys
