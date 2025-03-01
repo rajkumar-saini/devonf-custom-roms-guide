@@ -166,7 +166,7 @@ wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-scr
 This creates signing keys for your custom ROM.
 
 ### 11. Modify Makefile (If Using Signing Keys)
-Edit `Android.mk` or similar file and add this line at the end:
+Edit `device.mk` or similar file and add this line at the end:
 ```bash
 -include vendor/lineage-priv/keys/keys.mk
 ```
