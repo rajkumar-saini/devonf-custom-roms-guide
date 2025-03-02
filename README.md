@@ -180,6 +180,8 @@ Edit `device.mk` or similar file and add this line at the end:
 
 ### 12. Set Environment Variables
 ```bash
+rm -rf /home/kjnewrom/.cache/ccache/tmp
+mkdir -p /home/kjnewrom/.cache/ccache/tmp
 export RELAX_USES_LIBRARY_CHECK=true
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
