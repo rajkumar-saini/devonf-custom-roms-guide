@@ -157,7 +157,12 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b l
 git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
 ```
 
-### 10. ROM Signing Setup (Optional)
+#### Private Keys for signing
+```bash
+git clone git@github.com:kjdev16/devonf-keys-vendor-lineage-priv.git vendor/lineage-pri
+```
+
+### 10. ROM Signing Setup (Optional / If above step not done)
 ```bash
 wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh \
   && chmod +x create-signed-env.sh \
