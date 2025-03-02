@@ -159,7 +159,7 @@ git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
 
 #### Private Keys for signing
 ```bash
-git clone git@github.com:kjdev16/devonf-keys-vendor-lineage-priv.git vendor/lineage-pri
+git clone git@github.com:kjdev16/devonf-keys-vendor-lineage-priv.git vendor/lineage-priv
 ```
 
 ### 10. ROM Signing Setup (Optional / If above step not done)
