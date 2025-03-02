@@ -105,6 +105,7 @@ The repo tool manages multiple Git repositories for Android development.
 ```bash
 git config --global user.email "kjdev00016@gmail.com"
 git config --global user.name "Kushagra Jain"
+tmux
 ```
 
 ## Phase 2: Device-Specific Setup
