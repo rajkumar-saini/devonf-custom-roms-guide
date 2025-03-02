@@ -89,8 +89,7 @@ source ~/.profile
 ```bash
 cd ~/
 git clone https://github.com/akhilnarang/scripts
-cd scripts
-./setup/android_build_env.sh
+./scripts/setup/android_build_env.sh
 ```
 This script installs necessary packages for building Android including OpenJDK, build tools, and other dependencies.
 
