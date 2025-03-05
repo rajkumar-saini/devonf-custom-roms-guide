@@ -122,38 +122,26 @@ This step downloads Android source code (~100GB) and may take several hours depe
 ### 9. Clone Device-Specific Repositories
 For Motorola Moto G73 5G (devonf):
 
+```bash
 #### Device Tree
-```bash
 git clone git@github.com:kjdev16/android_device_motorola_devonf.git -b fifteen-aosp device/motorola/devonf
-```
 
-#### Vendor Tree
-```bash
+# Vendor Tree
 git clone git@github.com:kjdev16/android_vendor_motorola_devonf.git vendor/motorola/devonf
-```
 
-#### Kernel
-```bash
+# Kernel
 git clone git@github.com:kjdev16/android_device_motorola_devonf-kernel.git -b fifteen device/motorola/devonf-kernel
-```
 
-#### Vendor MotCamera
-```bash
+# Vendor MotCamera
 git clone git@gitlab.com:devonf1/android_vendor_motorola_devonf-motcamera.git vendor/motorola/devonf-motcamera
-```
 
-#### MediaTek SEPolicy Vendor
-```bash
+# MediaTek SEPolicy Vendor
 git clone https://github.com/yaap/device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
-```
 
-#### MediaTek SEPolicy
-```bash
+# MediaTek SEPolicy
 git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b lineage-17.1 device/mediatek/sepolicy
-```
 
-#### MediaTek Hardware
-```bash
+# MediaTek Hardware
 git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
 ```
 
