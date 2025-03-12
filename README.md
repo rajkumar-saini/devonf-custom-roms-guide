@@ -121,7 +121,11 @@ tmux
 ### 9. Set Environment Variables
 
 ```bash
+rm -rf /home/kjnewrom/.cache/ccache/tmp
+mkdir -p /home/kjnewrom/.cache/ccache/tmp
+export RELAX_USES_LIBRARY_CHECK=true
 export USE_CCACHE=1 && ccache -M 50G && export CONFIG_STATE_NOTIFIER=y && export SELINUX_IGNORE_NEVERALLOWS=true
+export CCACHE_EXEC=/usr/bin/ccache
 ```
 
 ## Phase 2: Device-Specific Setup
@@ -163,13 +167,13 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b l
 git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
 ```
 
-### 12.1. Private Keys for signing
+### 12. Private Keys for signing
 **Note:** *Check the ROM for Official Signing script*
 ```bash
 git clone git@github.com:kjdev16/devonf-keys-vendor-lineage-priv.git vendor/lineage-priv
 ```
 
-### 12.2. ROM Signing Setup (Optional / If above step not done)
+### 13. ROM Signing Setup (Optional / If above step not done)
 ```bash
 wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh \
   && chmod +x create-signed-env.sh \
@@ -177,22 +181,13 @@ wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-scr
 ```
 This creates signing keys for your custom ROM.
 
-### 13. Modify Makefile (If Using Signing Keys)
+### 14. Modify Makefile (If Using Signing Keys)
 Edit `device.mk` or similar file and add this line at the end:
 ```bash
 -include vendor/lineage-priv/keys/keys.mk
 ```
 
 ## Phase 3: Build Process
-
-### 14. Set Environment Variables
-```bash
-rm -rf /home/kjnewrom/.cache/ccache/tmp
-mkdir -p /home/kjnewrom/.cache/ccache/tmp
-export RELAX_USES_LIBRARY_CHECK=true
-export USE_CCACHE=1 && ccache -M 50G && export CONFIG_STATE_NOTIFIER=y && export SELINUX_IGNORE_NEVERALLOWS=true
-export CCACHE_EXEC=/usr/bin/ccache
-```
 
 ## **Note**: All commands displayed below depends on various ROMs, use as per declared in their manifest.
 ### 15. Initial Build
