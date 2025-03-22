@@ -146,10 +146,10 @@ For Motorola Moto G73 5G (devonf):
 
 ```bash
 #### Device Tree
-git clone git@github.com:kjdev16/android_device_motorola_devonf.git -b fifteen-aosp device/motorola/devonf
+git clone git@github.com:kjdev16/android_device_motorola_devonf.git -b fifteen-qpr2 device/motorola/devonf
 
 # Vendor Tree
-git clone git@github.com:kjdev16/android_vendor_motorola_devonf.git vendor/motorola/devonf
+git clone git@github.com:kjdev16/android_vendor_motorola_devonf.git fifteen-qpr2 vendor/motorola/devonf
 
 # Kernel
 git clone git@github.com:kjdev16/android_device_motorola_devonf-kernel.git -b fifteen device/motorola/devonf-kernel
