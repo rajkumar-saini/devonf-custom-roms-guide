@@ -146,10 +146,10 @@ For Motorola Moto G73 5G (devonf):
 
 ```bash
 # Device Tree
-git clone git@github.com:kjdev16/android_device_motorola_devonf.git -b fifteen-qpr2 device/motorola/devonf
+git clone git@github.com:kjdev16/android_device_motorola_devonf.git -b fifteen-aosp device/motorola/devonf
 
 # Vendor Tree
-git clone git@github.com:kjdev16/android_vendor_motorola_devonf.git -b fifteen-qpr2 vendor/motorola/devonf
+git clone git@github.com:kjdev16/android_vendor_motorola_devonf.git -b fourteen vendor/motorola/devonf
 
 # Kernel
 git clone git@github.com:kjdev16/android_device_motorola_devonf-kernel.git -b fifteen device/motorola/devonf-kernel
@@ -165,6 +165,9 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b l
 
 # MediaTek Hardware
 git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
+
+# Vendor Extra
+git clone https://github.com/adarsh0s/vendor_extra.git vendor/extra
 ```
 
 ### 12. Private Keys for signing
