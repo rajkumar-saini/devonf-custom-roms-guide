@@ -50,8 +50,8 @@ sudo apt update && sudo apt upgrade -y
 ### 2. Install Required Packages
 
 ```bash
-sudo apt-get install git-core gnupg rsync flex bison build-essential zip curl zlib1g-dev zram-tools libc6-dev-i386 git-lfs tmux ccache x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-sudo apt install zram-tools
+sudo apt-get install git-core gnupg rsync flex bison build-essential zip curl zlib1g-dev zram-tools libc6-dev-i386 git-lfs tmux ccache x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig -y
+sudo apt install zram-tools -y
 git-lfs install
 ```
 
@@ -146,13 +146,13 @@ For Motorola Moto G73 5G (devonf):
 
 ```bash
 # Device Tree
-git clone git@github.com:kjdev16/android_device_motorola_devonf.git -b fifteen-aosp device/motorola/devonf
+git clone git@github.com:kjdev16/device_motorola_devonf.git -b fifteen device/motorola/devonf
 
 # Vendor Tree
-git clone git@github.com:kjdev16/android_vendor_motorola_devonf.git -b fourteen vendor/motorola/devonf
+git clone git@github.com:adarsh0s/vendor_motorola_devonf.git -b fifteen vendor/motorola/devonf
 
 # Kernel
-git clone git@github.com:kjdev16/android_device_motorola_devonf-kernel.git -b fifteen device/motorola/devonf-kernel
+git clone git@github.com:kjdev16/device_motorola_devonf-kernel.git device/motorola/devonf-kernel
 
 # Vendor MotCamera
 git clone git@gitlab.com:devonf1/android_vendor_motorola_devonf-motcamera.git vendor/motorola/devonf-motcamera
@@ -167,7 +167,7 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b l
 git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
 
 # Vendor Extra
-git clone https://github.com/adarsh0s/vendor_extra.git vendor/extra
+git clone git@github.com:kjdev16/vendor_extra.git vendor/extra
 ```
 
 ### 12. Private Keys for signing
@@ -190,21 +190,42 @@ Edit `device.mk` or similar file and add this line at the end:
 -include vendor/lineage-priv/keys/keys.mk
 ```
 
+For ROMs which have `vendor/<aosp>/signing` directory, we do not need lineage-priv, directly use keys in this directory
+```
+vendor/aosp/signing/keys
+```
+
 ## Phase 3: Build Process
 
 ## **Note**: All commands displayed below depends on various ROMs, use as per declared in their manifest.
 ### 15. Initial Build
+Android 15 qpr1 build:
 ```bash
 source build/envsetup.sh
 lunch <rom>_devonf-ap4a-user
 mka bacon
 ```
+Android 15 qpr2 build:
+```bash
+source build/envsetup.sh
+lunch <rom>_devonf-bp1a-user
+mka bacon
+```
+
 This step compiles the ROM and may take 2-4 hours depending on hardware.
 
 Also, build `userdebug` version so as to take logs for any issues during flashing.
+QPR1:
 ```bash
 source build/envsetup.sh
 lunch <rom>_devonf-ap4a-userdebug
+mka bacon
+```
+
+QPR2:
+```bash
+source build/envsetup.sh
+lunch <rom>_devonf-bp1a-userdebug
 mka bacon
 ```
 
