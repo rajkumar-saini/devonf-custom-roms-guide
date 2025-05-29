@@ -149,7 +149,7 @@ For Motorola Moto G73 5G (devonf):
 git clone git@github.com:kjdev16/device_motorola_devonf.git -b fifteen device/motorola/devonf
 
 # Vendor Tree
-git clone git@github.com:adarsh0s/vendor_motorola_devonf.git -b fifteen vendor/motorola/devonf
+git clone git@github.com:kjdev16/vendor_motorola_devonf.git -b fifteen vendor/motorola/devonf
 
 # Kernel
 git clone git@github.com:kjdev16/device_motorola_devonf-kernel.git device/motorola/devonf-kernel
