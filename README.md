@@ -239,9 +239,9 @@ git clone git@github.com:kjdev16/device_motorola_devonf-kernel.git device/motoro
 git clone git@gitlab.com:devonf1/android_vendor_motorola_devonf-motcamera.git vendor/motorola/devonf-motcamera
 
 # MediaTek-specific repositories
-git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
+git clone https://github.com/yaap/device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
 git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b lineage-17.1 device/mediatek/sepolicy
-git clone https://github.com/LineageOS/android_hardware_mediatek.git hardware/mediatek
+git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
 ```
 
 ### Optional: ROM Signing Keys
