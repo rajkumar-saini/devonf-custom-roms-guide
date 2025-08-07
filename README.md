@@ -1,7 +1,7 @@
-# Android 15 ROM Build Guide for Motorola Moto G73 5G (`devonf`)
+# Android 16 ROM Build Guide for Motorola Moto G73 5G (`devonf`)
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/kjdev16/device_motorola_devonf)
-[![Android Version](https://img.shields.io/badge/Android-15-blue)](https://developer.android.com/about/versions/15)
+[![Android Version](https://img.shields.io/badge/Android-16-blue)](https://developer.android.com/about/versions/16)
 [![Device](https://img.shields.io/badge/Device-Moto%20G73%205G-orange)](https://www.motorola.com/us/smartphones-moto-g-5g/p)
 
 ## ⚠️ Important Disclaimer
