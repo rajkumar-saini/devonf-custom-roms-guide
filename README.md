@@ -1,6 +1,6 @@
 # Android 16 ROM Build Guide for Motorola Moto G73 5G (`devonf`)
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/kjdev16/device_motorola_devonf)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rajkumar-saini/device_motorola_devonf)
 [![Android Version](https://img.shields.io/badge/Android-16-blue)](https://developer.android.com/about/versions/16)
 [![Device](https://img.shields.io/badge/Device-Moto%20G73%205G-orange)](https://www.motorola.com/us/smartphones-moto-g-5g/p)
 
@@ -46,7 +46,6 @@
 
 ### Device Requirements
 - **Unlocked bootloader** (critical!)
-- **Custom recovery** (TWRP/OrangeFox recommended)
 - **ADB and Fastboot** properly configured
 - **Stock ROM backup** for recovery purposes
 
@@ -227,28 +226,34 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 cd ~/customRom
 
 # Device Tree (main device configuration)
-git clone git@github.com:kjdev16/device_motorola_devonf.git -b fifteen device/motorola/devonf
+git clone git@github.com:rajkumar-saini/device_motorola_devonf.git -b sixteen-qpr2 device/motorola/devonf
 
 # Vendor Tree (proprietary blobs)
-git clone git@github.com:kjdev16/vendor_motorola_devonf.git -b fifteen vendor/motorola/devonf
+git clone git@github.com:rajkumar-saini/vendor_motorola_devonf.git -b sixteen-qpr2 vendor/motorola/devonf
 
 # Kernel Source
-git clone git@github.com:kjdev16/device_motorola_devonf-kernel.git device/motorola/devonf-kernel
+git clone git@github.com:rajkumar-saini/device_motorola_devonf-kernel.git -b sixteen-qpr2 device/motorola/devonf-kernel
 
 # Additional Trees
-git clone git@gitlab.com:devonf1/android_vendor_motorola_devonf-motcamera.git vendor/motorola/devonf-motcamera
+git clone git@github.com:rajkumar-saini/vendor_motorola_devonf-motcamera.git -b sixteen-qpr2 vendor/motorola/devonf-motcamera
 
 # MediaTek-specific repositories
-git clone https://github.com/yaap/device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
-git clone https://github.com/LineageOS/android_device_mediatek_sepolicy.git -b lineage-17.1 device/mediatek/sepolicy
-git clone https://github.com/yaap/hardware_mediatek.git hardware/mediatek
+git clone https://github.com/yaap/device_mediatek_sepolicy_vndr.git -b sixteen device/mediatek/sepolicy_vndr
+git clone https://github.com/yaap/hardware_mediatek.git -b sixteen hardware/mediatek
 ```
 
 ### Optional: ROM Signing Keys
 
 ```bash
-# For official builds with custom keys
-git clone git@github.com:kjdev16/devonf-keys-vendor-lineage-priv.git vendor/lineage-priv
+# Setup Signing Keys
+git clone -b main https://github.com/LineageOS/scripts.git /tmp/lineage-scripts
+mkdir -p vendor/lineage-priv
+mv /tmp/lineage-scripts/lineage-priv-template vendor/lineage-priv/keys
+rm -rf /tmp/lineage-scripts
+
+cd vendor/lineage-priv/keys
+./keys.sh
+cd ../../..
 
 # Add to device.mk
 echo '-include vendor/lineage-priv/keys/keys.mk' >> device/motorola/devonf/device.mk
@@ -285,7 +290,7 @@ source build/envsetup.sh
 lunch
 
 # Select your target (replace <rom> with actual ROM name)
-lunch <rom>_devonf-ap2a-user
+lunch <rom>_devonf-bp4a-user
 
 # Set build variables
 export RELAX_USES_LIBRARY_CHECK=true
@@ -382,7 +387,6 @@ scp ~/customRom/out/target/product/devonf/*.zip user@server:/path/to/uploads/
 
 ### Pre-Flash Checklist
 - [ ] Bootloader is unlocked
-- [ ] Custom recovery is installed
 - [ ] Stock ROM backup is created
 - [ ] ADB/Fastboot is working
 - [ ] Battery is >50% charged
@@ -397,6 +401,9 @@ fastboot reboot fastboot
 
 # Flash individual partitions
 fastboot flash vendor_boot vendor_boot.img
+
+# Boot to bootloader mode
+fastboot reboot bootloader
 
 # Reboot to recovery
 fastboot reboot recovery
@@ -523,7 +530,8 @@ fastboot reboot recovery
 ## 🙏 Credits & Acknowledgments
 
 ### Core Contributors
-- **[Kushagra Jain](https://github.com/kjdev16)** - Device maintainer
+- **[Rajkumar Saini](https://github.com/rajkumar-saini)** - Device maintainer
+- **[Kushagra Jain](https://github.com/kjdev16)** - Base Guide
 - **[Akhil Narang](https://github.com/akhilnarang)** - Build environment scripts
 - **[@cyberknight777](https://t.me/cyberknight777)** - Kernel development
 - **[@sarthakray2002](https://t.me/sarthakroy2002)** - Device tree assistance
