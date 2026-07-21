@@ -133,7 +133,7 @@ sudo sysctl -p
 
 ```bash
 # Generate SSH key
-ssh-keygen -t ed25519 -C "kjdev00016@gmail.com" -f ~/.ssh/id_ed25519
+ssh-keygen -t ed25519 -C "287562898+rajkumar-saini@users.noreply.github.com" -f ~/.ssh/id_ed25519
 
 # Start SSH agent
 eval "$(ssh-agent -s)"
@@ -192,8 +192,8 @@ source ~/.bashrc
 ### 7. Git Identity Configuration
 
 ```bash
-git config --global user.name "Kushagra Jain"
-git config --global user.email "kjdev00016@gmail.com"
+git config --global user.name "Rajkumar Saini"
+git config --global user.email "287562898+rajkumar-saini@users.noreply.github.com"
 git lfs install
 
 # Start tmux session for long-running builds
