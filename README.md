@@ -224,7 +224,8 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```bash
 # Navigate to ROM directory
 cd ~/customRom
-
+```
+```bash
 # Device Tree (main device configuration)
 git clone git@github.com:rajkumar-saini/device_motorola_devonf.git -b sixteen-qpr2 device/motorola/devonf
 
@@ -236,6 +237,9 @@ git clone git@github.com:rajkumar-saini/device_motorola_devonf-kernel.git -b six
 
 # Additional Trees
 git clone git@github.com:rajkumar-saini/vendor_motorola_devonf-motcamera.git -b sixteen-qpr2 vendor/motorola/devonf-motcamera
+
+# Basic Call Recorder (BCR)
+git clone git@github.com:rajkumar-saini/vendor_bcr.git -b main vendor/bcr
 
 # MediaTek-specific repositories
 git clone https://github.com/yaap/device_mediatek_sepolicy_vndr.git -b sixteen device/mediatek/sepolicy_vndr
@@ -270,6 +274,7 @@ echo '-include vendor/lineage-priv/keys/keys.mk' >> device/motorola/devonf/devic
 ls -la device/motorola/devonf/
 ls -la vendor/motorola/devonf/
 ls -la device/motorola/devonf-kernel/
+ls -la vendor/bcr/
 
 # Check available disk space (minimum 200GB free)
 df -h
